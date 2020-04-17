@@ -17,3 +17,7 @@ h1, p {
   margin-right: 10px ;
   margin-bottom: 10px;
 }
+
+#select_{
+  width: 100px;
+}

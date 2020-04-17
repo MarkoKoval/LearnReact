@@ -9,6 +9,7 @@ class Monitoring extends Component {
   constructor() {
     super();
     this.state = {
+      column_count : 3,
       search_query: "",
       initialItems : [
         "Apples",
@@ -103,18 +104,24 @@ class Monitoring extends Component {
     // this.setState({ name })
   }
 
+  HandleSelectChange = query => {
+     this.setState({column_count:query} );
+  }
+
   render() {
     return (
         <React.Fragment>
-          <SearchC search_query ={this.state.search_query} onSearchQueryChange={this.handleSearchQueryChange} />
+          <SearchC search_query ={this.state.search_query} column_count = {this.state.column_count} onSearchQueryChange={this.handleSearchQueryChange}
+          onSelectChange = {this.HandleSelectChange} />
         <div className="row">
          {this.state.items.map(item => {
-    return  <CardC columms_ =  {items_in_row[3]}  chat_name_ = {item} />
+    return  <CardC columms_ =  {items_in_row[this.state.column_count]}  chat_name_ = {item} />
 
            })}
         </div>
            </React.Fragment>
     )
+
   }
 
 }

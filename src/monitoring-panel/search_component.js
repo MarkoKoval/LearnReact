@@ -11,6 +11,9 @@ class SearchC extends Component {
     this.props.onSearchQueryChange(event.target.value);
      }
 
+     handleColumnSelect = event => {
+            this.props.onSelectChange(event.target.value);
+     }
 
      render(){
 
@@ -18,14 +21,7 @@ class SearchC extends Component {
           <div className="input-group mb-3 ">
         <input id = "search_" type="text" className="form-control" aria-label="Text input with checkbox" placeholder="Search... " value={this.props.search_query} onChange={this.handleInputChange}   />
 
-
-        <select className="custom-select" id="inputGroupSelect01">
-            <option disabled>Search Possibilities </option>
-
-        </select>
-
-        <select className="custom-select" id="inputGroupSelect01">
-            <option disabled>Choose Rows Columns Count</option>
+        <select className="custom-select" id = "select_" value={this.props.column_count} onChange={this.handleColumnSelect} >
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>

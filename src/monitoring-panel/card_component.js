@@ -11,7 +11,7 @@ class CardC extends Component {
       <div className="card-body">
         <h4 className="card-title">{this.props.chat_name_}</h4>
         <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" className="btn btn-primary">Show chat</a>
+        <a href="#" className="btn btn-primary">Show</a>
       </div>
     </div>
       </div>;
